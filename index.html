@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Dori Rivera | Web Design and Development | Online Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web Design and Development Portfolio for Dori Rivera. My goal is to create an online presence for your company.">
+    <meta name="author" content="Dori Rivera[2016]">
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 80px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+	  
+	  .fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+	  
+    </style>
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+    
+<!--Import Javascript-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+
+    <script src="js/jquery.js"></script>
+
+
+<script src="js/core.js"></script>
+
+<!-- Add jQuery library -->
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+
+
+	<!-- Add fancyBox main JS and CSS files -->
+	<script type="text/javascript" src="fancy/source/jquery.fancybox.js"></script>
+	<link rel="stylesheet" type="text/css" href="fancy/source/jquery.fancybox.css" media="screen" />
+
+	<!-- Add Button helper (this is optional) -->
+	<link rel="stylesheet" type="text/css" href="fancy/source/helpers/jquery.fancybox-buttons.css" />
+	<script type="text/javascript" src="fancy/source/helpers/jquery.fancybox-buttons.js"></script>
+
+
+	<!-- Add Media helper (this is optional) -->
+	<script type="text/javascript" src="fancy/source/helpers/jquery.fancybox-media.js"></script>
+
+
+ <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox();
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+			
+			
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				openEffect : 'none',
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+		
+
+	</script>
+    
+     
+
+
+  </head>
+
+
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+         <div class="navbar-inner text-center">
+         
+        <div class="container row-fluid">      
+
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li><a href="#work" title="work">Work</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li><a href="http://doririvera.com/images/resume.pdf" target="_blank">Resume</a></li>
+             </ul>
+          </div><!--/.nav-collapse -->
+        </div><!-- /container -->
+      </div> <!-- /navbar-inner -->
+    </div> <!-- /navbar-fixed-top -->
+
+
+<section id="home" class="page-section">
+        <div class="container row-fluid">      
+        <div class="span12 text-center">
+  	<img src="images/logo2.png" alt="Dori Rivera Logo" class="logo"><br />
+    <h2>web design & development</h2>
+    <hr class="hrTop hidden-phone" />
+	<p class="intro">My goal is to create a professional web presence for your company. <br />
+	I focus on responsive, attractive, and coherent <strong>WEBSITE  DESIGNS</strong>.
+	</p>
+</div> <!-- /span12 -->
+        </div><!-- /container -->
+
+</section>        <!-- <a href="#work" class="button" title="work"></a> -->
+
+
+
+        
+<section id="work" class="page-section">
+   <div class="container">
+        <div class="span12 row">
+        <h1 class="hidden-phone">work</h1>
+        <h3 class="visible-phone">work</h3>
+        
+        <div class="toggleWork visible-desktop">
+        <a id="workDesktop1" href="javascript:showonlyone('newboxes1');" class="selections" title="work">websites</a>
+        <a id="workDesktop2" href="javascript:showonlyone('newboxes2');" class="selections" title="work">apps</a>
+        <a id="workDesktop3" href="javascript:showonlyone('newboxes3');" class="selections" title="work">graphic design</a>
+        <!--<a id="workDesktop4" href="javascript:showonlyone('newboxes4');" class="selections" title="work">view all</a>-->
+        </div> <!-- toggleWork -->
+        
+        <div class="toggleWork visible-tablet">
+        <a id="workTablet1" href="javascript:showonlyone('newboxes1');" class="selectionsApp" title="work">websites</a>
+        <a id="workTablet2" href="javascript:showonlyone('newboxes2');" class="selectionsApp" title="work">apps</a>
+        <a id="workTablet3" href="javascript:showonlyone('newboxes3');" class="selectionsApp" title="work">graphic design</a>
+        <!--<a id="workTablet4" href="javascript:showonlyone('newboxes4');" class="selectionsApp" title="work">view all</a>-->
+        </div> <!-- toggleWork -->
+        
+        <div class="toggleWork visible-phone">
+             <a id="workPhone1" href="javascript:showonlyone('newboxes4');" class="selectionsPh" title="work">view all</a>
+        </div> <!-- toggleWork -->
+        
+        <hr class="style2 hrMid span12">
+        
+        </div> <!-- span12 -->
+
+
+     </div> <!-- /container -->   
+
+
+        </section>
+
+
+<section id="websitesWork" class="hidden-phone">
+
+   <div class="container">
+
+        <div class="newboxes" id="newboxes1">
+        <div id="myCarousel" class="carousel">
+
+  <!-- Carousel items -->
+  <div class="carousel-inner">
+  
+
+	<div class="active item">
+    <a href="http://www.tamragleason.com/" target="_blank"><img src="images/web17.png" alt="Tamra Gleason and Associates"></a>
+    <p class="carousel-caption visible-desktop">Tamra Gleason &amp; Associates (Custom Wordpress Theme)</p>
+    <p class="carousel-caption-tablet offset1 visible-tablet">Tamra Gleason &amp; Associates (Custom Wordpress Theme)</p>
+    </div>
+
+	<div class="item">
+    <a href="http://www.ignitorlabs.com/wendys" target="_blank"><img src="images/web14.png" alt="Ignitor Labs Responsive E-Learning Portal for Wendy's Courses"></a>
+    <p class="carousel-caption visible-desktop">Ignitor Labs Responsive E-Learning Portal for Wendy's Courses</p>
+    <p class="carousel-caption-tablet offset1 visible-tablet">Ignitor Labs Responsive E-Learning Portal for Wendy's Courses</p>
+    </div>
+
+	<div class="item">
+    <a href="#" target="_blank"><img src="images/web15.png" alt="Ignitor Labs Responsive E-Learning Portal for Manitowoc Courses"></a>
+    <p class="carousel-caption visible-desktop">Ignitor Labs Responsive E-Learning Portal for Manitowoc Courses</p>
+    <p class="carousel-caption-tablet offset1 visible-tablet">Ignitor Labs Responsive E-Learning Portal for Manitowoc Courses</p>
+    </div>
+	
+	<div class="item">
+    <a href="#" target="_blank"><img src="images/web16.png" alt="Ignitor Labs MicroSite A/B Test (Collaborated with HARP Social Marketing)"></a>
+    <p class="carousel-caption visible-desktop">Ignitor Labs MicroSite A/B Test (Collaborated with HARP Social Marketing)</p>
+    <p class="carousel-caption-tablet offset1 visible-tablet">Ignitor Labs MicroSite A/B Test (Collaborated with HARP Social Marketing)</p>
+    </div>
+	
+	<div class="item">
+    <a href="http://www.kaifeshforcongress.com" target="_blank"><img src="images/web10.png" alt="Kaifesh for Congress Campaign"></a>
+    <p class="carousel-caption visible-desktop">Kaifesh for Congress Campaign (Freelance Responsive Website)</p>
+    <p class="carousel-caption-tablet offset1 visible-tablet">Kaifesh for Congress Campaign (Freelance Responsive Website)</p>
+    </div>
+	
+    <div class="item">
+    <a href="http://www.doririvera.com/coupon" target="_blank"><img src="images/web1.png" alt="Everything About Couponing"></a>
+    <p class="carousel-caption visible-desktop">Everything About Couponing Tutorial (School Project)</p>
+    <p class="carousel-caption-tablet offset1 visible-tablet">Everything About Couponing Tutorial (School Project)</p>
+    </div>
+    <div class="item">
+    <a href="http://www.doririvera.com/crayola" target="_blank"><img src="images/web2.png" alt="Explore Crayola Melted Crayon Art"></a>
+    <p class="carousel-caption visible-desktop">Explore Crayola Melted Crayon Art Tutorial (School Project)</p>
+    <p class="carousel-caption-tablet offset1 visible-tablet">Explore Crayola Melted Crayon Art Tutorial (School Project)</p>
+    </div>
+    <div class="item">
+    <!--<a href="images/processTrich.jpg" class="flipLightBox" rel="group[trich]" >
+    
+    <a href="trich.swf" class="flipLightBox" rel="group[trich]" > -->
+    <a class="fancybox" href="images/ssTrich1.jpg" rel="gallery[1]" data-fancybox-group="gallery" title="Trichotillomania Learning Center - Homepage">
+    <a class="fancybox" href="images/ssTrich2.jpg" rel="gallery[2]" data-fancybox-group="gallery" title="Trichotillomania Learning Center - Trichotillomania General Info">
+    <a class="fancybox" href="images/ssTrich3.jpg" rel="gallery[3]" data-fancybox-group="gallery" title="Trichotillomania Learning Center - Dermatillomania General Info">
+    <a class="fancybox" href="images/ssTrich4.jpg" rel="gallery[4]" data-fancybox-group="gallery" title="Trichotillomania Learning Center - Trich Signs & Symptoms">
+    <a class="fancybox" href="images/ssTrich5.jpg" rel="gallery[5]" data-fancybox-group="gallery" title="Trichotillomania Learning Center - Treatment Options">
+    <a class="fancybox" href="images/ssTrich6.jpg" rel="gallery[6]" data-fancybox-group="gallery" title="Trichotillomania Learning Center - Our Mission">
+    <a class="fancybox" href="images/processTrich.jpg" rel="gallery[7]" data-fancybox-group="gallery" title="Trichotillomania Learning Center Process Work">
+     <a class="fancybox" href="images/as3Trich.jpg" rel="gallery[8]" data-fancybox-group="gallery" title="Trichotillomania Learning Center Action Script 3">
+    
+    <img src="images/web3.png" alt="Trichotillomania Learning Center"></a>
+    <p class="carousel-caption visible-desktop">Trichotillomania Learning Center Flash Website (School Project)</p>
+    <p class="carousel-caption-tablet offset1 visible-tablet">Trichotillomania Learning Center Flash Website (School Project)</p>
+    </div>
+    <div class="item">
+     <a class="fancybox various" href="harry/animation.swf" title="Harry Potter and the Deathly Hallows Part 2 Flash website">
+    <img src="images/web4.png" alt="Harry Potter and the Deathly Hallows Movie Part 2"></a>
+    <p class="carousel-caption visible-desktop">Harry Potter and the Deathly Hallows Part 2 Flash Website (School Project)</p>
+    <p class="carousel-caption-tablet offset1 visible-tablet">Harry Potter and the Deathly Hallows Part 2 Flash Website (School Project)</p>
+    </div>
+	<!--
+    <div class="item">
+    <a href="http://www.doririvera.com/recipe" target="_blank" title="Chicken Cordon Bleu Recipe Card website"><img src="images/web5.png" alt="Recipe Card Chicken Cordon Bleu"></a>
+    <p class="carousel-caption visible-desktop">Chicken Cordon Bleu Recipe Card website</p>
+    <p class="carousel-caption-tablet offset1 visible-tablet">Chicken Cordon Bleu Recipe Card website</p>
+    </div>-->
+  </div>
+
+    <!-- Carousel nav -->
+  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+  
+    <ol class="carousel-indicators hidden-phone">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+    <li data-target="#myCarousel" data-slide-to="4"></li>
+    <li data-target="#myCarousel" data-slide-to="5"></li>
+  </ol>
+   
+</div> <!-- /myCarousel -->
+</div> <!-- /newboxes -->
+
+</div>  <!-- /container -->
+ </section>
+ 
+ 
+ 
+ 
+<section id="appsWork" class="hidden-phone">
+
+   <div class="container">
+
+        <div class="newboxes" id="newboxes2" style="display:none">
+        <div id="myCarousel2" class="carousel">
+
+  <!-- Carousel items -->
+  <div class="carousel-inner">
+    <div class="active item">
+     <a class="fancybox various" href="geometry/voyageFrom1to10edit2.swf" title="Interactive App Introducing the topic of Sacred Geometry">
+    <img src="images/app1.png" alt="Sacred Geometry APP"></a>
+    <p class="carousel-caption visible-desktop">Interactive App Introducing Sacred Geometry (School Project)</p>
+    <p class="carousel-caption-tablet offset1 visible-tablet">Interactive App Introducing Sacred Geometry (School Project)</p>
+    </div>
+    <div class="item">
+
+
+
+     <a class="fancybox various" href="jellies/newJellies.swf" title="Interactive App based on Jellies Exhibit in Chicago, IL">
+     <img src="images/app2.png" alt="Jellies APP"></a>
+    <p class="carousel-caption visible-desktop">Interactive App based on Jellies Exhibit in Chicago, IL (School Project)</p>
+    <p class="carousel-caption-tablet offset1 visible-tablet">Interactive App based on Jellies Exhibit in Chicago, IL (School Project)</p>
+    </div>
+    
+  </div>
+  <!-- Carousel nav -->
+  <a class="carousel-control left" href="#myCarousel2" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#myCarousel2" data-slide="next">&rsaquo;</a>
+  
+    <ol class="carousel-indicators hidden-phone">
+    <li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel2" data-slide-to="1"></li>
+  </ol>
+   
+</div> <!-- /myCarousel2 -->
+</div> <!-- /newboxes2 -->
+
+</div>  <!-- /container2 -->
+ </section>
+ 
+ 
+ 
+ <section id="productionWork" class="hidden-phone">
+
+   <div class="container">
+
+        <div class="newboxes" id="newboxes3" style="display:none">
+        <div id="myCarousel3" class="carousel">
+
+  <div class="carousel-inner">
+<!-- 	    <div class="active item">
+	    <a class="fancybox" href="images/aslanProcess.jpg" rel="aslan[1]" data-fancybox-group="gallery2" title="Some Process Work for Aslan Coffee Design">
+	    <a class="fancybox" href="images/aslanMockup.jpg" rel="aslan[2]" data-fancybox-group="gallery2" title="Finalized Interface Design for Aslan Coffee">
+	    <img src="images/mockup1.png" alt="Aslan Coffee Mockup"></a>
+	     <p class="carousel-caption visible-desktop">Interface Design for Aslan Coffee</p>
+	     <p class="carousel-caption-tablet offset1 visible-tablet">Interface Design for Aslan Coffe</p>
+	    </div>
+	    <div class="item">
+	    <a class="fancybox" href="images/okabashiMockup.jpg" rel="okabashi" data-fancybox-group="gallery3" title="Interface Design for Okabashi Shoes">
+	    <img src="images/mockup2.png" alt="Okabashi Shoes Mockup"></a>
+	     <p class="carousel-caption visible-desktop">Interface Design for Okabashi Shoes</p>
+	     <p class="carousel-caption-tablet offset1 visible-tablet">Interface Design for Okabashi Shoes</p>
+	    </div> -->
+	    <div class="active item">
+	    <a href="http://www.repairsdonerightapplianceandhvac.com/" target="_blank"><img src="images/web18.png" alt="Repairs Done Right Appliance and HVAC"></a>
+	    <p class="carousel-caption visible-desktop">Interface Design for Repairs Done Right Appliance and HVAC</p>
+	    <p class="carousel-caption-tablet offset1 visible-tablet">Interface Design for Repairs Done Right Appliance and HVAC</p>
+	    </div>
+	    <div class="item">
+	    <img src="images/web19.png" alt="Russ Darrow Banner Design">
+	    <p class="carousel-caption visible-desktop">Russ Darrow Mazda (Banner Design)</p>
+	    <p class="carousel-caption-tablet offset1 visible-tablet">Russ Darrow Mazda (Banner Design)</p>
+	    </div>
+	    <div class="item">
+	    <img src="images/web21.png" alt="Russ Darrow Banner Design">
+	    <p class="carousel-caption visible-desktop">Russ Darrow Chrysler Jeep Dodge Ram (Banner Design)</p>
+	    <p class="carousel-caption-tablet offset1 visible-tablet">Russ Darrow Chrysler Jeep Dodge Ram (Banner Design)</p>
+	    </div>
+	    <div class="item">
+	    <a class="fancybox" href="images/operation-nehemiah.jpg" rel="on[1]" data-fancybox-group="gallery2" title="Operation Nehemiah Nonprofit Graphic Design">
+	    <img src="images/web20.png" alt="Operation Nehemiah Mockup"></a>
+	     <p class="carousel-caption visible-desktop">Interface Design for Operation Nehemiah Nonprofit Website</p>
+	     <p class="carousel-caption-tablet offset1 visible-tablet">Interface Design for Operation Nehemiah Nonprofit Website</p>
+	    </div>
+	    <div class="item">
+	    <a class="fancybox" href="images/metawire.png" rel="on[1]" data-fancybox-group="gallery3" title="Meta Wire Wraps Logo">
+	    <img src="images/web22.png" alt="Meta Wire Wraps (Logo Design)"></a>
+	     <p class="carousel-caption visible-desktop">Logo/Branding Design for Meta Wire Wraps</p>
+	     <p class="carousel-caption-tablet offset1 visible-tablet">Logo/Branding Design for Meta Wire Wraps</p>
+	    </div>
+  	</div>
+
+  <a class="carousel-control left" href="#myCarousel3" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#myCarousel3" data-slide="next">&rsaquo;</a>
+  
+    <ol class="carousel-indicators hidden-phone">
+    <li data-target="#myCarousel3" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel3" data-slide-to="1"></li>
+    <li data-target="#myCarousel3" data-slide-to="2"></li>
+  </ol>
+   
+</div> 
+</div> 
+
+</div>  
+ </section>
+ 
+ 
+  <section id="allWork">
+
+   <div class="container">
+
+        <div class="newboxes" id="newboxes4" style="display:none">
+        
+        <div class="span12 row-fluid hidden-phone">
+        <table class="viewAll push">
+        <tr>
+
+
+<td class="cells"><a class="feature01" href="http://www.doririvera.com/coupon" target="_blank">
+	<span class="overlay01 visible-desktop">
+		<span class="caption01 visible-desktop">WEBSITE</span>
+	</span>
+	<img src="images/thumb2.jpg" alt="Everything About Couponing tutorial website">
+</a>
+</td>
+
+<td class="cells"><a class="feature01" href="http://www.doririvera.com/crayola" target="_blank">
+	<span class="overlay01 visible-desktop">
+		<span class="caption01 visible-desktop">WEBSITE</span>
+	</span>
+	<img src="images/thumb3.jpg" alt="Explore Crayola Melted Crayon Art tutorial website">
+</a>
+</td>
+
+<td class="cells"><a class="feature01" href="#myModal1" data-toggle="modal">
+	<span class="overlay01 visible-desktop">
+		<span class="caption01 visible-desktop">WEBSITE</span>
+	</span>
+	<img src="images/thumb4.jpg" alt="Trichotillomania Learning Center Non-profit Flash website">
+</a>
+</td>
+
+        </tr>
+                <tr>
+        <td class="cells"><a class="feature01" href="#myModal7" data-toggle="modal">
+	<span class="overlay01 visible-desktop">
+		<span class="caption01 visible-desktop">WEBSITE</span>
+	</span>
+	<img src="images/thumb5.jpg" alt="Harry Potter and the Deathly Hallows Movie Part 2">
+</a>
+</td>
+
+<!--
+<td class="cells"><a class="feature01" href="http://www.doririvera.com/recipe" target="_blank">
+	<span class="overlay01 visible-desktop">
+		<span class="caption01 visible-desktop">WEBSITE</span>
+	</span>
+	<img src="images/thumb6.jpg" alt="Chicken Cordon Bleu Recipe Card website">
+</a>
+</td>
+-->
+
+<td class="cells"><a class="feature01" href="#myModal4" data-toggle="modal">
+	<span class="overlay02 visible-desktop">
+		<span class="caption02 visible-desktop">MOBILE APP</span>
+	</span>
+	<img src="images/thumb7.jpg" alt="Interactive App Introducing the topic of Sacred Geometry">
+</a>
+</td>
+
+<td class="cells"><a class="feature01" href="#myModal5" data-toggle="modal">
+	<span class="overlay02 visible-desktop">
+		<span class="caption02 visible-desktop">MOBILE APP</span>
+	</span>
+	<img src="images/thumb8.jpg" alt="Interactive App based on Jellies Exhibit in Chicago, IL">
+</a>
+</td>
+        </tr>        
+      <tr>
+        
+     <!--   
+<td class="cells"><a class="feature01" href="#myModal2" data-toggle="modal">
+	<span class="overlay03 visible-desktop">
+		<span class="caption03 visible-desktop">PRODUCTION</span>
+	</span>
+	<img src="images/thumb9.jpg" alt="Interface Design for Aslan Coffee">
+</a>
+</td>
+
+<td class="cells"><a class="feature01" href="#myModal3" data-toggle="modal">
+	<span class="overlay03 visible-desktop">
+		<span class="caption03 visible-desktop">PRODUCTION</span>
+	</span>
+	<img src="images/thumb10.jpg" alt="Interface Design for Okabashi Shoes">
+</a>
+</td>-->
+
+<td></td>
+
+        </tr>
+        </table>
+ 
+        
+
+        </div>
+        
+        
+        
+        
+        
+        
+        
+          <div class="span12 row-fluid text-center visible-phone">
+      
+
+<a href="http://www.doririvera.com/coupon" target="_blank">
+	<img src="images/thumb2.jpg" alt="Everything About Couponing tutorial website"></a>
+
+<a href="http://www.doririvera.com/crayola" target="_blank">
+	<img src="images/thumb3.jpg" alt="Explore Crayola Melted Crayon Art tutorial website"></a>
+
+<a href="#myModal1" data-toggle="modal">
+	<img src="images/thumb4.jpg" alt="Trichotillomania Learning Center Non-profit Flash website"></a>
+
+<a href="#myModal8" data-toggle="modal">
+	<img src="images/thumb5.jpg" alt="Harry Potter and the Deathly Hallows Movie Part 2">
+</a>
+
+<!--
+<a href="http://www.doririvera.com/recipe" target="_blank"><img src="images/thumb6.jpg" alt="Chicken Cordon Bleu Recipe Card website"></a>
+-->
+
+<a href="#myModal4" data-toggle="modal">
+	<img src="images/thumb7.jpg" alt="Interactive App Introducing the topic of Sacred Geometry"></a>
+
+<a href="#myModal5" data-toggle="modal">
+	<img src="images/thumb8.jpg" alt="Interactive App based on Jellies Exhibit in Chicago, IL">
+</a>
+      
+	  <!--
+      <a href="#myModal2" data-toggle="modal">
+	<img src="images/thumb9.jpg" alt="Interface Design for Aslan Coffee"></a>
+
+<a href="#myModal3" data-toggle="modal">
+<img src="images/thumb10.jpg" alt="Interface Design for Okabashi Shoes"></a>
+-->
+
+
+        </div>
+        
+        
+        
+        
+        </div>
+        
+        </div>
+        
+
+
+ </section>
+ 
+
+
+
+
+
+        
+ 
+ 
+        
+        
+        <section id="about" class="page-section" style="height: 400px;background:transparent !important;">
+   <div class="container hidden-phone">      
+        <div class="span12 row">
+        <h1>about</h1>
+        <hr class="style2 hrMid up span12">
+        <div class="row-fluid">
+        <div class="span6 offset1">
+        <div class="aboutPink">
+        <p class="about">I have been involved with web and graphic design in the professional industry for 4+ years. In 2013, I obtained a BFA in Web Design and Interactive Media at the Illinois 
+Institute of Art - Schaumburg.</p>
+
+<p class="about">I focus on responsive, attractive and coherent designs. It is important to combine functionality and aesthetics to create an effective website. 
+I enjoy coding, design, writing/hierarchy, typography and other nerdy stuff. I see myself in a future front-end development position. However,  I am eager to learn all 
+aspects of creative technologies.</p>
+
+</div> <!-- pink -->
+
+        </div>
+        <div class="span4">
+        <p class="about"><strong>INSPIRATION:</strong> My logo, as well as this layout design, was inspired by a my recent spark of interest sacred geometry and the flower of life. I hope you enjoy my online portfolio!</p>
+        <p class="about"><strong>SKILLS/INTERESTS:</strong> HTML5, CSS3, JavaScript/JQuery, Responsive Design, PHP, Wordpress, Bootstrap, Graphic Design, Research and Development, Reading and Writing, and Cooking</p>
+
+        <p class="about">
+        <!--<table class="table">
+        <tr>
+        <th>PROFICIENCIES:</th>
+        <td><img src="images/1.jpg" alt="Photoshop"></td>
+        <td><img src="images/2.jpg" alt="Dreamweaver"></td>
+        <td><img src="images/3.jpg" alt="Flash Professional"></td>
+        <td><img src="images/4.jpg" alt="Illustrator"></td>
+        <td><img src="images/5.jpg" alt="InDesign"></td>
+        </tr>
+        <tr>
+        <td></td>
+        <td><img src="images/6.jpg" alt="Microsoft Word"></td>
+        <td><img src="images/7.jpg" alt="Microsoft Powerpoint"></td>
+        <td><img src="images/8.jpg" alt="Microsoft Excel"></td>
+        <td><img src="images/9.png" alt="PC"></td>
+        <td><img src="images/10.png" alt="MAC"></td>
+        </tr>
+        </table>-->
+   
+        
+
+</div> <!-- span4-->
+
+
+
+		</div> <!-- rowfluid -->
+
+
+        </div> <!-- span12 -->
+        </div> <!-- container -->
+        
+   
+   <div class="container visible-phone">      
+          <div class="span12 row">
+        <h3>about</h3>
+        <hr class="style2 hrMid span12">
+
+   <p class="aboutPh even">I have been involved with web and graphic design in the professional industry for 4+ years. In 2013, I obtained a BFA in Web Design and Interactive Media at the Illinois 
+Institute of Art - Schaumburg.</p>
+
+<p class="even">I focus on responsive, attractive and coherent designs. It is important to combine functionality and aesthetics to create an effective website. 
+I enjoy coding, design, writing/hierarchy, typography and other nerdy stuff. I see myself in a future front-end development position. However,  I am eager to learn all 
+aspects of creative technologies.</p>
+
+<p class="even"><strong>SKILLS/INTERESTS:</strong> HTML5, CSS3, JavaScript/JQuery, Responsive Design, PHP, Wordpress, Bootstrap, Graphic Design, Research and Development, Reading and Writing, and Cooking</p>
+
+<p class="even"><strong>PROFICIENCIES:</strong></p>
+     <!--   <table class="mb">
+        <tr>
+        <td class="table2"><img src="images/1.jpg" alt="Photoshop"></td>
+        <td class="table2"><img src="images/2.jpg" alt="Dreamweaver"></td>
+        <td class="table2"><img src="images/3.jpg" alt="Flash Professional"></td>
+        <td class="table2"><img src="images/4.jpg" alt="Illustrator"></td>
+        <td class="table2"><img src="images/5.jpg" alt="InDesign"></td>
+        </tr>
+        <tr>
+        <td class="table2"><img src="images/6.jpg" alt="Microsoft Word"></td>
+        <td class="table2"><img src="images/7.jpg" alt="Microsoft Powerpoint"></td>
+        <td class="table2"><img src="images/8.jpg" alt="Microsoft Excel"></td>
+        <td class="table2"><img src="images/9.png" alt="PC"></td>
+        <td class="table2"><img src="images/10.png" alt="MAC"></td>
+        </tr>
+        </table>-->
+
+    
+    </div>
+    </div>
+        
+    </section>    
+        
+        
+        
+         <section id="pix" class="page-section hidden-phone">
+   <div class="container row-fluid">      
+        <div class="span12">
+  
+        
+        <div class="span4 text-center"><img src="images/frame1.png" alt="Watercolor 1" class="frames"></div>
+                <div class="span4 text-center"><img src="images/frame2.png" alt="Watercolor 1" class="frames"></div>
+         <div class="span4 text-center"><img src="images/frame3.png" alt="Watercolor 1" class="frames"></div>
+        
+        
+		</div> <!-- rowfluid -->
+
+
+        </div> <!-- span12 -->
+        
+        </section>
+        
+        
+        
+        <section id="contact" class="page-section">
+        <div class="bg3 hidden-phone">
+   <div class="container visible-desktop flowerShow">      
+        <div class="span12 row-fluid contactInfo">
+  
+        
+        <div class="span4 contactUp">
+         <h1>contact</h1>
+         <p class="info text-left">
+         <a href="mailto:web@doririvera.com" class="infoLink"><img src="images/mailIcon.jpg" alt="Email!" class="icon">web@doririvera.com</a><BR />
+         <!--<img src="images/voiceIcon.jpg" alt="Voicemail!" class="icon">Phone: 847.204.5701<BR />-->
+        <a href="http://www.linkedin.com/pub/dori-rivera/7b/958/464" target="_blank" class="infoLink"><img src="images/linkIcon.jpg" alt="LinkedIn!" class="icon">Linkedin: Dori Rivera</a><BR />
+                 </div> <!--span4-->
+                 
+              <div class="span4">
+                <img src="images/downIcon.jpg" class="miniIcon" alt="Download Resume"><p class="bemio">download</p>
+                <p class="midInfo"><a href="http://doririvera.com/images/resume.pdf" target="_blank" class="midLink">resume.pdf</a></p>
+               <img src="images/heartIcon.jpg" class="miniIcon" alt="Bookmark My Portfolio"><p class="bemio">bookmark</p>
+                <p class="midInfo">my portfolio</p>
+                
+                <div class="footer">&copy; Dori Rivera 2016</div>
+                
+                         </div> <!--span4-->
+                
+                
+         <div class="span4 contactUp">
+         <h1>message</h1>
+         <div class="messageMe">
+         <form action="php/contact.php" method="post">
+    <div class="controls">
+<input type="text" name="your_name" class="input-large" placeholder="Name">
+    </div>
+    
+        <div class="controls">
+      <input name="email" class="input-large" placeholder="Email" type="email" required>
+    </div>
+ 
+    <div class="controls">
+<textarea rows="3" placeholder="Message" name="comments" class="input-large"></textarea>
+    </div>
+
+    <div class="controls">
+      <button type="submit" class="btn btn-default" value="send">Submit</button>
+       <button type="reset" class="btn btn-default">Clear</button>
+  </div>
+</form>
+         
+         
+          </div> <!--messageMe-->
+          
+          </div><!--span4-->
+        
+        </div>  <!--bg3-->
+
+
+        </div> <!-- span12 -->
+        </div> <!-- container -->
+        
+   
+  <div class="container visible-tablet visible-phone contactPh">      
+        <div class="span12 row-fluid">
+        
+        <div class="row-fluid">
+        <div class="span6">
+         <h3>contact</h3>
+          <p class="info text-left">
+         <img src="images/mailIcon.jpg" alt="Email!" class="icon"><a href="mailto:web@doririvera.com" class="infoLink">web@doririvera.com</a><BR />
+         <img src="images/voiceIcon.jpg" alt="Voicemail!" class="icon">Phone: 847.204.5701<BR />
+         <a href="http://www.linkedin.com/pub/dori-rivera/7b/958/464" target="_blank" class="infoLink"><img src="images/linkIcon.jpg" alt="LinkedIn!" class="icon">Linkedin: Dori Rivera</a><BR />
+         </p>
+         <img src="images/downIcon.jpg" class="miniphIcon" alt="Download Resume"><p class="bemio">download</p>
+                <p class="midInfo"><a href="http://doririvera.com/images/resume.pdf" target="_blank" class="midLink">resume.pdf</a></p>
+                 </div> <!--span6-->
+        
+        <div class="span6">
+         <h3>message</h3>
+         <div class="messageMe">
+         <form action="php/contact.php" method="post">
+    <div class="controls">
+<input type="text" name="your_name" class="input-medium" placeholder="Name">
+    </div>
+    
+        <div class="controls">
+      <input name="email" class="input-medium" placeholder="Email" type="email" required>
+    </div>
+ 
+    <div class="controls">
+<textarea rows="3" placeholder="Message" name="comments" class="input-medium"></textarea>
+    </div>
+
+    <div class="controls">
+      <button type="submit" class="btn btn-default" value="send">Submit</button>
+       <button type="reset" class="btn btn-default">Clear</button>
+  </div>
+</form>
+
+         
+         
+          </div> <!--messageMe-->
+          
+          </div><!--span6--> 
+          </div> <!--rowfluid--> 
+        
+        
+        </div>
+        </div>
+        </section>
+
+
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+ <!--   <script src="js/bootstrap-transition.js"></script>
+    <script src="js/bootstrap-alert.js"></script>-->
+    <script src="js/bootstrap-modal.js"></script>
+    <script src="js/bootstrap-dropdown.js"></script>
+  <!--  <script src="js/bootstrap-scrollspy.js"></script>
+    <script src="js/bootstrap-tab.js"></script>
+    <script src="js/bootstrap-tooltip.js"></script>
+    <script src="js/bootstrap-popover.js"></script>
+    <script src="js/bootstrap-typeahead.js"></script>-->
+    <script src="js/bootstrap-button.js"></script>
+    <script src="js/bootstrap-collapse.js"></script>
+    <script src="js/bootstrap-carousel.js"></script>
+    
+    
+
+<!-- Modals for Mobile version -->
+<div id="myModal1" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h4>Trichotillomania Learning Center Non-profit Flash website</h4>
+  </div>
+  <div class="modal-body">
+    <p><strong>DESCRIPTION:</strong> The goal of this project was to re-create an interactive website entirely using Action Script 3 in Flash Professional. Trichotillomania Learning Center is a Non-profit agency ( <a href="www.trich.org" class="modalLink" target="_blank">www.trich.org</a> ). Their mission is to end the suffering caused by hair pulling disorder, skin picking disorder, and related BFRBs.</p>
+    <p><img src="images/processTrich.jpg" alt="Process Work of TLC"></p>
+    <p><img src="images/as3Trich.jpg" alt="ActionScript 3 of TLC"></p>
+    <p><img src="images/ssTrich1.jpg" alt="Trichotillomania Learning Center: Homepage"></p>
+    <p><img src="images/ssTrich2.jpg" alt="Trichotillomania Learning Center: Trichotillomania"></p>
+    <p><img src="images/ssTrich3.jpg" alt="Trichotillomania Learning Center: Dermatillomania"></p>
+    <p><img src="images/ssTrich4.jpg" alt="TLC: Trichotillomania Signs & Symptoms"></p>
+    <p><img src="images/ssTrich5.jpg" alt="Trichotillomania Learning Center: Treatment Options"></p>
+    <p><img src="images/ssTrich6.jpg" alt="Trichotillomania Learning Center: Mission & History"></p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+  </div>
+</div> 
+
+<!--
+<div id="myModal2" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h4>Interface Design for Aslan Coffee</h4>
+  </div>
+  <div class="modal-body">
+    <p><strong>DESCRIPTION:</strong> The goal of this project was to create an interface design of the company Aslan Coffee ( <a href="http://www.aslancoffee.com.au/" class="modalLink" target="_blank">http://www.aslancoffee.com.au/</a> ). We were given a pdf file describing the core identity and other client specifications required for the design.</p>
+    <p><img src="images/aslanProcess.jpg" alt="Process Work for Aslan Coffee"></p>
+    <p><img src="images/aslanMockup.jpg" alt="Interface Design for Aslan Coffee"></p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+  </div>
+</div> -->
+
+
+<!--
+<div id="myModal3" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h4>Interface Design for Okabashi Shoes</h4>
+  </div>
+  <div class="modal-body">
+    <p><strong>DESCRIPTION:</strong> The goal of this project was to create an interface design of the company Okabashi Shoes ( <a href="http://www.okabashi.com/" class="modalLink" target="_blank">http://www.okabashi.com</a> ). We were given a document describing the target audience and other client specifications required for the design.</p>
+    <p><img src="images/okabashiMockup.jpg"  alt="Interface Design for Okabashi Shoes"></p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+  </div>
+</div> 
+-->
+
+
+<div id="myModal4" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h4>Interactive App Introducing the Topic of Sacred Geometry</h4>
+  </div>
+  <div class="modal-body">
+    <p><strong>DESCRIPTION:</strong> The goal of this project was to create a 10+ page interactive app for motion graphics. This app is based entirely on the book "A Voyage from 1 to 10: A Beginner's Guide to Constructing the Universe," by Michael S. Schneider! It gives some introductory information about the topic of Sacred Geometry. Provided are a few screenshots of this app, however you can view a live version in the APPS section from your desktop!</p><p>DISCLAIMER: I do not claim the rights to any photos provided. This website is for informational and educational purposes only.</p>
+    <p><img src="images/geometry1.jpg" alt="Sacred Geometry: Preloader with Flower of Life Animation"></p>
+    <p><img src="images/geometry2.jpg" alt="Sacred Geometry: Homepage to Explore"></p>
+    <p><img src="images/geometry3.jpg" alt="Sacred Geometry: Mini Preloader to Monad Page"></p>
+    <p><img src="images/geometry4.jpg" alt="Sacred Geometry: Monad/Circle"></p>
+    <p><img src="images/geometry5.jpg" alt="Sacred Geometry: How to Draw Monad"></p>
+    <p><img src="images/geometry6.jpg" alt="Sacred Geometry: Dyad/Line"></p>
+    <p><img src="images/geometry7.jpg" alt="Sacred Geometry: Triad/Triangle"></p>
+    <p><img src="images/geometry8.jpg" alt="Sacred Geometry: Tetrad/Square"></p>
+    <p><img src="images/geometry9.jpg" alt="Sacred Geometry: Platonic Solids"></p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+  </div>
+</div> 
+
+
+<div id="myModal7" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h4>Harry Potter and the Deathly Hallows Part 2 Flash website</h4>
+  </div>
+  <div class="modal-body">
+    <p><strong>DESCRIPTION:</strong> The goal of this project was to create a 10+ page interactive flash website based on the movie "Harry Potter and the Deathly Hallows - Part 2." It provides some information on the upcoming movie the, cast, soundtrack, photos, downloads, and trailers. Provided are a few screenshots of this app, however you can view a live version in the WEBSITES section from your desktop!</p><p>DISCLAIMER: I do not claim the rights to any photos provided. This website is for informational and educational purposes only.</p>
+    <p><img src="images/harry1.jpg" alt="Harry Potter: Preloader Wand"></p>
+    <p><img src="images/harry2.jpg" alt="Harry Potter: About the Movie"></p>
+    <p><img src="images/harry3.jpg" alt="Harry Potter: Cast"></p>
+    <p><img src="images/harry4.jpg" alt="Harry Potter: Photos"></p>
+    <p><img src="images/harry5.jpg" alt="Harry Potter: Downloads"></p>
+    <p><img src="images/harry6.jpg" alt="Harry Potter: Download Wallpaper"></p>
+    <p><img src="images/harry7.jpg" alt="Harry Potter: Soundtrack"></p>
+    <p><img src="images/harry8.jpg" alt="Harry Potter: Trailers"></p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+  </div>
+</div> 
+
+
+<div id="myModal5" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h4>Interactive App based on Jellies Exhibit in Chicago, IL</h4>
+  </div>
+  <div class="modal-body">
+    <p><strong>DESCRIPTION:</strong> The goal of this project was to create a 10+ page interactive flash website based on the Jellies Exhibit in Chicago, IL. This was a team project, where each student was assigned certain roles. I was one of 3 Programmers (other roles included: Project Manager, Graphic Designers, Motion Graphics, and Research/Development) who worked to code the ActionScript 3 for this APP, as well as setting up the timeline on Flash Professional. I also played a big part in the Research/Development team and worked with the Project Manager to find, condense, organize, and produce written content for the site! Provided are a few screenshots of this app, however you can view a live version in the APPS section from your desktop!</p><p>DISCLAIMER: I do not claim the rights to any photos provided. This website is for informational and educational purposes only.</p>
+    <p><img src="images/jelly1.jpg" alt="Jellies: Jellyfish Preloader and Homepage"></p>
+    <p><img src="images/jelly2.jpg" alt="Jellies: Exhibit Information Page"></p>
+    <p><img src="images/jelly3.jpg" alt="Jellies: Click on a Jelly to Learn More!"></p>
+    <p><img src="images/jelly4.jpg" alt="Jellies: Click on a Jelly to Learn More!"></p>
+    <p><img src="images/jelly6.jpg" alt="Jellies: Ted Talks"></p>
+    <p><img src="images/jelly5.jpg" alt="Jellies: Purple Striped Sea Nettle Information"></p>
+    <p><img src="images/jelly7.jpg" alt="Jellies: Spotted Lagoon Jelly"></p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+  </div>
+</div> 
+
+
+    
+</body>
+</html>
