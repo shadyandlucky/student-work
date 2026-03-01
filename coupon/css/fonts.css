@@ -1,0 +1,71 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*Importing fonts from folder*/
+
+@font-face {
+    font-family: 'AmaticBold';
+	src: local(":)"),
+    src: url('../fonts/AmaticSC-Bold-webfont.eot');
+    src: url('../fonts/AmaticSC-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/AmaticSC-Bold-webfont.woff') format('woff'),
+         url('../fonts/AmaticSC-Bold-webfont.ttf') format('truetype'),
+         url('../fonts/AmaticSC-Bold-webfont.svg#AmaticSCBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'AmaticRegular';
+	src: local(":)"),
+    src: url('../fonts/AmaticSC-Regular-webfont.eot');
+    src: url('../fonts/AmaticSC-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/AmaticSC-Regular-webfont.woff') format('woff'),
+         url('../fonts/AmaticSC-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/AmaticSC-Regular-webfont.svg#AmaticSCRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'GoodDogRegular';
+	src: local(":)"),
+    src: url('../fonts/GoodDog-webfont.eot');
+    src: url('../fonts/GoodDog-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/GoodDog-webfont.woff') format('woff'),
+         url('../fonts/GoodDog-webfont.ttf') format('truetype'),
+         url('../fonts/GoodDog-webfont.svg#GoodDogRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'FolksRegular';
+	src: local(":)"),
+    src: url('../fonts/Folks-Normal-webfont.eot');
+    src: url('../fonts/Folks-Normal-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Folks-Normal-webfont.woff') format('woff'),
+         url('../fonts/Folks-Normal-webfont.ttf') format('truetype'),
+         url('../fonts/Folks-Normal-webfont.svg#FolksRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'FolksBold';
+	src: local(":)"),
+    src: url('../fonts/Folks-Bold-webfont.eot');
+    src: url('../fonts/Folks-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Folks-Bold-webfont.woff') format('woff'),
+         url('../fonts/Folks-Bold-webfont.ttf') format('truetype'),
+         url('../fonts/Folks-Bold-webfont.svg#FolksBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
